@@ -1,7 +1,7 @@
 # Google Foobar ![](https://us-central1-progress-markdown.cloudfunctions.net/progress/44) [![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
 
 
-## Level 1 (Programming Knowledge) ![](https://us-central1-progress-markdown.cloudfunctions.net/progress/100)
+## Level 1 (Basic Programming Knowledge) ![](https://us-central1-progress-markdown.cloudfunctions.net/progress/100)
 ### Question 1 - "I Love Lance & Janice" :ballot_box_with_check:
 The premise of this question was quite simple. 
 Essentially all you had to do was 'flip' or 'mirror' each lowercase letter in a string along the axis m | n (for example, a => z, t => g). 
