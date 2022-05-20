@@ -7,7 +7,7 @@ The premise of this question was quite simple.
 Essentially all you had to do was 'flip' or 'mirror' each lowercase letter in a string along the axis m | n (for example, a => z, t => g). 
 Solving this problem just required some simple addition and subtraction. If you know that every lowercase letter has an ASCII value of 96 < ord(c) < 123, 
 it can be deduced that the calculation to 'flip' any letter by ASCII value is simply 
-(27-(ord(c)-96))+96 => 219-ord(c). and all you need to do at that point is to convert the ASCII value back into a character using chr(n), and add it to the 'translated' string.
+$(27-(ord(c)-96))+96$ => $219-ord(c)$. and all you need to do at that point is to convert the ASCII value back into a character using chr(n), and add it to the 'translated' string.
 
 
 ## Level 2 (Simple Data Structures) ![](https://us-central1-progress-markdown.cloudfunctions.net/progress/100)
@@ -22,7 +22,7 @@ The goal of this problem was to take a perfect binary tree of height h, labeled 
 1   2 4   5
 ```
                
-and find the parent of a given nodes in list q. Because it is binary tree, I elected to use binary search. A perfect binary tree of height h has $2^h-1$ nodes, so the search space is 1 to $2^h-1$, meaning each node of index n has a a parent of index n//2 or n-1. My approach was for each node to find the 'halfway' point, and check whether the node was greater than the halfway point, changing the beginning or the end of the search space to the old 'halfway' point accordingly.
+and find the parent of a given nodes in list q. Because it is binary tree, I elected to use binary search. A perfect binary tree of height $h$ has $2^h-1$ nodes, so the search space is $1$ to $2^h-1$, meaning each node of index $n$ has a a parent of index $n//2$ or $n-1$. My approach was for each node to find the 'halfway' point, and check whether the node was greater than the halfway point, changing the beginning or the end of the search space to the old 'halfway' point accordingly.
 
 ### Question 3 - "Don't Get Volunteered" :ballot_box_with_check:
 This problem involved A BFS on a graph. The goal was to find the least amount of moves it took for a knight on a chessboard to get from a starting point to a destination. The board spaces are labeled from 0 to 63 like so:
@@ -45,7 +45,7 @@ This problem involved A BFS on a graph. The goal was to find the least amount of
 | 56 | 57 | 58 | 59 | 60 | 61 | 62 | 63 |
 -----------------------------------------
 ```
-My initial approach was to have a list [0...63] and use moves like +17, -15, etc. to find the least amount of moves it took to get to the destination. Instead of doing this, I eventually elected to use a coordinate system (i.e. (0, 1) would be the board square with index 1) to find the shortest path, because it was a bit easier to visualize. This involved a very similar approach to my original idea. I used a list of all possible moves that the knight could make from the a given point for a move in each iteration, eventually finding the shortest path using a BFS algorithm. 
+My initial approach was to have a list [0...63] and use moves like $+17$, $-15$, etc. to find the least amount of moves it took to get to the destination. Instead of doing this, I eventually elected to use a coordinate system (i.e. $(0, 1)$ would be the board square with index $1$) to find the shortest path, because it was a bit easier to visualize. This involved a very similar approach to my original idea. I used a list of all possible moves that the knight could make from the a given point for a move in each iteration, eventually finding the shortest path using a BFS algorithm. 
 
 ## Level 3 (Introduction to Higher-Level Math and Algorithms) ![](https://us-central1-progress-markdown.cloudfunctions.net/progress/33)
 
@@ -54,7 +54,7 @@ It was at this point in foobar that I encountered some topics I was not all too 
 $$G(x) = \prod_{n=1}^{\infty}1+x^n$$ 
 which means
 $$G(x) = (1+x)(1+x^2)(1+x^3)...(1+x^{n-1}) = 1 + x + x^2 + 2x^3 + 2x^4+ 3x^5...$$
-since the number of solutions for any n is the number of ways the terms combine to make $x^n$, you can use the coefficent to determine the number of distinct partitions of n. The code for this logic turns out to be quite simple, just needing a couple lines illustrating the polynomial multiplication. I'm extremely glad that I did not just try to impliment a brute force algorithm and instead learned the underlying theory, because it not only saved the runtime of my code, but also helped me learn something new in the process.
+since the number of solutions for any $n$ is the number of ways the terms combine to make $x^n$, you can use the coefficent to determine the number of distinct partitions of $n$. The code for this logic turns out to be quite simple, just needing a couple lines illustrating the polynomial multiplication. I'm extremely glad that I did not just try to impliment a brute force algorithm and instead learned the underlying theory, because it not only saved the runtime of my code, but also helped me learn something new in the process.
 
 
 
