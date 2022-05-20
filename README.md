@@ -54,7 +54,7 @@ It was at this point in foobar that I encountered some topics I was not all too 
 $$G(x) = \prod_{n=1}^{\infty}1+x^n$$ 
 which means
 $$G(x) = (1+x)(1+x^2)(1+x^3)...(1+x^{n-1}) = 1 + x + x^2 + 2x^3 + 2x^4+ 3x^5...$$
-since the number of solutions for any $n$ is the number of ways the terms combine to make $x^n$, you can use the coefficent to determine the number of distinct partitions of $n$. The code for this logic turns out to be quite simple, just needing a couple lines illustrating the polynomial multiplication. I'm extremely glad that I did not just try to impliment a brute force algorithm and instead learned the underlying theory, because it not only saved the runtime of my code, but also helped me learn something new in the process.
+since the number of solutions for any $n$ is the number of ways the terms combine to make $x^n$, you can use the coefficent of $x^{n-1}$ to determine the number of distinct partitions of $n$. The code for this logic turns out to be quite simple, just needing a couple lines illustrating the polynomial multiplication. I'm extremely glad that I did not just try to impliment a brute force algorithm and instead learned the underlying theory, because it not only saved the runtime of my code, but also helped me learn something new in the process.
 
 
 
