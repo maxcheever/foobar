@@ -5,7 +5,7 @@
 ### Question 1 - "I Love Lance & Janice" :ballot_box_with_check:
 The premise of this question was quite simple. 
 Essentially all you had to do was 'flip' or 'mirror' each lowercase letter in a string along the axis m | n (for example, a => z, t => g). 
-Solving this problem just required some simple addition and subtraction. If you know that every lowercase letter has an ASCII value of 96 < ord(c) < 123, 
+Solving this problem just required some simple addition and subtraction. If you know that every lowercase letter has an ASCII value of $96 < ord(c) < 123$, 
 it can be deduced that the calculation to 'flip' any letter by ASCII value is simply 
 $(27-(ord(c)-96))+96$ => $219-ord(c)$. and all you need to do at that point is to convert the ASCII value back into a character using chr(n), and add it to the 'translated' string.
 
@@ -50,7 +50,7 @@ My initial approach was to have a list [0...63] and use moves like $+17$, $-15$,
 ## Level 3 (Introduction to Higher-Level Math and Algorithms) ![](https://us-central1-progress-markdown.cloudfunctions.net/progress/33)
 
 ### Question 4 - "The Grandest Staircase Of Them All" :ballot_box_with_check:
-It was at this point in foobar that I encountered some topics I was not all too familiar with (being a first-year computer science student). Luckily, Wikipedia and Wolfram MathWorld exist and I was able to understand the logic behind this problem. What you had to do was find the number of ways that you could make a set of steps out of n bricks, where each step must be taller than the last. I did a little bit of reading on [partition](https://en.wikipedia.org/wiki/Partition_(number_theory)) and was able to deduce that I needed to find the number of distinct partitions of n bricks (partitions where no two integers are the same). This led me to [this](https://mathworld.wolfram.com/PartitionFunctionQ.html) Wolfram MathWorld article on the partition function $Q(n)$, which illustrates the generating function for for $Q(n)$ to be  
+It was at this point in foobar that I encountered some topics I was not all too familiar with (being a first-year computer science student). Luckily, Wikipedia and Wolfram MathWorld exist and I was able to understand the logic behind this problem. What you had to do was find the number of ways that you could make a set of steps out of $n$ bricks, where each step must be taller than the last. I did a little bit of reading on [partition](https://en.wikipedia.org/wiki/Partition_(number_theory)) and was able to deduce that I needed to find the number of distinct partitions of $n$ bricks (partitions where no two integers are the same). This led me to [this](https://mathworld.wolfram.com/PartitionFunctionQ.html) Wolfram MathWorld article on the partition function $Q(n)$, which illustrates the generating function for for $Q(n)$ to be  
 $$G(x) = \prod_{n=1}^{\infty}1+x^n$$ 
 which means
 $$G(x) = (1+x)(1+x^2)(1+x^3)...(1+x^{n-1}) = 1 + x + x^2 + 2x^3 + 2x^4+ 3x^5...$$
