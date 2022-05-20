@@ -1,7 +1,7 @@
 # Google Foobar ![](https://us-central1-progress-markdown.cloudfunctions.net/progress/44) [![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
 
 
-## Level 1 ![](https://us-central1-progress-markdown.cloudfunctions.net/progress/100)
+## Level 1 (Programming Knowledge) ![](https://us-central1-progress-markdown.cloudfunctions.net/progress/100)
 ### Question 1 - "I Love Lance & Janice"
 The premise of this question was quite simple. 
 Essentially all you had to do was 'flip' or 'mirror' each lowercase letter in a string along the axis m | n (for example, a => z, t => g). 
@@ -10,7 +10,7 @@ it can be deduced that the calculation to 'flip' any letter by ASCII value is si
 (27-(ord(c)-96))+96 => 219-ord(c). and all you need to do at that point is to convert the ASCII value back into a character using chr(n), and add it to the 'translated' string.
 
 
-## Level 2 ![](https://us-central1-progress-markdown.cloudfunctions.net/progress/100)
+## Level 2 (Simple Data Structures) ![](https://us-central1-progress-markdown.cloudfunctions.net/progress/100)
 ### Question 2 - "Ion Flux Relabeling"
 The goal of this problem was to take a perfect binary tree of height h, labeled in post-order (example pictured below),
 
@@ -21,7 +21,7 @@ The goal of this problem was to take a perfect binary tree of height h, labeled 
                 / \   / \
                1   2 4   5
                
-and find the parent of a given nodes in list q. Because it is binary tree, I elected to use binary search. A perfect binary tree of height h has 2<sup>h</sup>-1 nodes, so the search space is 1 to 2<sup>h</sup> - 1, meaning each node of index n has a a parent of index n//2 or n-1. My approach was for each node to find the 'halfway' point, and check whether the node was greater than the halfway point, changing the beginning or the end of the search space to the old 'halfway' point accordingly.
+and find the parent of a given nodes in list q. Because it is binary tree, I elected to use binary search. A perfect binary tree of height h has $2^h-1$ nodes, so the search space is 1 to $2^h-1$, meaning each node of index n has a a parent of index n//2 or n-1. My approach was for each node to find the 'halfway' point, and check whether the node was greater than the halfway point, changing the beginning or the end of the search space to the old 'halfway' point accordingly.
 
 ### Question 3 - "Don't Get Volunteered"
 This problem involved A BFS on a graph. The goal was to find the least amount of moves it took for a knight on a chessboard to get from a starting point to a destination. The board spaces are labeled from 0 to 63 like so:
@@ -45,8 +45,16 @@ This problem involved A BFS on a graph. The goal was to find the least amount of
                -----------------------------------------
 My initial approach was to have a list [0...63] and use moves like +17, -15, etc. to find the least amount of moves it took to get to the destination. Instead of doing this, I eventually elected to use a coordinate system (i.e. (0, 1) would be the board square with index 1) to find the shortest path, because it was a bit easier to visualize. This involved a very similar approach to my original idea. I used a list of all possible moves that the knight could make from the a given point for a move in each iteration, eventually finding the shortest path using a BFS algorithm. 
 
-## Level 3 ![](https://us-central1-progress-markdown.cloudfunctions.net/progress/33)
-### Question 4
+## Level 3 (Introduction to Higher-Level Math and Algorithms) ![](https://us-central1-progress-markdown.cloudfunctions.net/progress/33)
+### Question 4 - "The Grandest Staircase Of Them All"
+It was at this point in foobar that I encountered some topics I was not all too familiar with (being a first-year computer science student). Luckily, Wikipedia and Wolfram MathWorld exist and I was able to deduce the logic behind this problem. What you had to do was find the number of ways that you could make a set of steps out of n bricks, where each step must be taller than the last. I did a little bit of reading on [partition](https://en.wikipedia.org/wiki/Partition_(number_theory)) and was able to deduce that I needed to find the number of distinct partitions of n bricks (partitions where no two integers are the same). This led me to [this](https://mathworld.wolfram.com/PartitionFunctionQ.html) Wolfram MathWorld article on the partition function $Q(n)$, which illustrates the generating function for for $Q(n)$ to be  
+$$G(x) = \prod_{n=1}^{\infty}1+x^n$$ 
+which means
+$$G(x) = (1+x)(1+x^2)(1+x^3)...(1+x^{n-1}) = 1 + x + x^2 + 2x^3 + 2x^4+ 3x^5...$$
+since the number of solutions for any n is the number of ways the terms combine to make $x^n$, you can use the coefficent to determine the number of distinct partitions of n. The code for this logic turns out to be quite simple, just needing a couple lines. I'm very glad that I did not just try to impliment a brute force algorithm and instead learned the underlying theory, because it not only saved the runtime of my code, but also helped me learn something new in the process.
+
+
+
 ### Question 5
 ### Question 6
 
