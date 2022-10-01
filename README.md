@@ -25,7 +25,7 @@ The goal of this problem was to take a perfect binary tree of height h, labeled 
 and find the parent of a given nodes in list q. Because it is binary tree, I elected to use binary search. A perfect binary tree of height $h$ has $2^h-1$ nodes, so the search space is $1$ to $2^h-1$, meaning each node of index $n$ has a a parent of index $n//2$ or $n-1$. My approach was for each node to find the 'halfway' point, and check whether the node was greater than the halfway point, changing the beginning or the end of the search space to the old 'halfway' point accordingly.
 
 ### Question 3 - "Don't Get Volunteered" :ballot_box_with_check:
-This problem involved A BFS on a graph. The goal was to find the least amount of moves it took for a knight on a chessboard to get from a starting point to a destination. The board spaces are labeled from 0 to 63 like so:
+This problem involved A BFS traversal on a graph. The goal was to find the least amount of moves it took for a knight on a chessboard to get from a starting point to a destination. The board spaces are labeled from 0 to 63 like so:
 ```
 -----------------------------------------
 | 0  | 1  |  2 | 3  | 4  | 5  | 6  | 7  |
